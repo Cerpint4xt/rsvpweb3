@@ -182,8 +182,8 @@ export class Event extends Entity {
     this.set("totalConfirmedAttendees", Value.fromBigInt(value));
   }
 
-  get rsvp(): Array<string> | null {
-    let value = this.get("rsvp");
+  get rsvps(): Array<string> | null {
+    let value = this.get("rsvps");
     if (!value || value.kind == ValueKind.NULL) {
       return null;
     } else {
@@ -191,11 +191,11 @@ export class Event extends Entity {
     }
   }
 
-  set rsvp(value: Array<string> | null) {
+  set rsvps(value: Array<string> | null) {
     if (!value) {
-      this.unset("rsvp");
+      this.unset("rsvps");
     } else {
-      this.set("rsvp", Value.fromStringArray(<Array<string>>value));
+      this.set("rsvps", Value.fromStringArray(<Array<string>>value));
     }
   }
 

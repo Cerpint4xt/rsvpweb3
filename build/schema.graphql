@@ -12,7 +12,7 @@ type Event @entity {
   paidOut: Boolean!
   totalRSVPs: BigInt!
   totalConfirmedAttendees: BigInt!
-  rsvp: [RSVP!] @derivedFrom(field: "event")
+  rsvps: [RSVP!] @derivedFrom(field: "event")
   confirmedAttendees: [Confirmation!] @derivedFrom(field: "event")
 }
 
